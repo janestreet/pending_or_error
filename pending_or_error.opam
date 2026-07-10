@@ -18,6 +18,9 @@ depends: [
   "dune"     {>= "3.17.0"}
 ]
 available: arch != "x86_32"
+conflicts: [
+  "oxcaml-compiler" {< "5.2.0minus39"}
+]
 synopsis: "A type useful for representing asynchronous results."
 description: "
 A `'a Pending_or_error.t` is a value that comes from an RPC server or some other fallible, asynchronous place. It's isomorphic to an `'a Or_error.t option`, but flattened out and slightly more semantically specific.
